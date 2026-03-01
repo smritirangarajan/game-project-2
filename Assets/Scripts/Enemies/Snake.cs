@@ -4,6 +4,7 @@ public class Snake : MonoBehaviour
 {
     private Transform player;
     [SerializeField] private float despawnDistance = 12f;
+    [SerializeField] private float fallSpeed = 1.5f;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class Snake : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);//按时间固定下降。
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

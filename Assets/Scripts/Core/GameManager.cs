@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string mainMenuSceneName = "MainMenu";
     [SerializeField] private string loseSceneName = "LoseGame";
 
-    private int _score;
-    private int _highScore;
+    private int _score;//貌似代表当前的分数
+    private int _highScore;//代表最高分数
     private bool _isGameOver;
 
     private const string HighScoreKey = "HighScore";

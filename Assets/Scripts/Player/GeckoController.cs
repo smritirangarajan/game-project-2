@@ -82,18 +82,22 @@ public class GeckoController : MonoBehaviour
 
     private void HandleTongue()
     {
+        //用这个函数来完成舌头发射
         if (Input.GetMouseButtonDown(0))
         {
+            //检测是否按下鼠标左键，如果是的话进一步调用
             ShootTongue();
         }
     }
 
     private void ShootTongue()
     {
+        //这里是在检测什么？没太懂
         if (tonguePrefab == null || tongueSpawnPoint == null) return;
+        //tongueSpawnPoint是舌头发射的起点。tonguePrefab是舌头图，现在这两个都没有，所以直接return了没有伸舌头
 
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorld.z = 0f;
+        mouseWorld.z = 0f;//把鼠标点击的位置转化为
 
         Vector2 direction = mouseWorld - tongueSpawnPoint.position;
 

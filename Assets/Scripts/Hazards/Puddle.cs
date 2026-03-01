@@ -4,6 +4,7 @@ public class Puddle : MonoBehaviour
 {
     private Transform player;
     private float despawnDistance = 12f;
+    [SerializeField] private float fallSpeed = 3f;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class Puddle : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);//按时间固定下降。
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
