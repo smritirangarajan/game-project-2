@@ -1,10 +1,8 @@
-
 using UnityEngine;
 
-public class PuddleManager : MonoBehaviour
+public class CoinManager : MonoBehaviour
 {
-
-    public GameObject puddle;
+    public GameObject coin;
     #region randomPos
     UnityEngine.Vector3 leftBottom;
     UnityEngine.Vector3 topRight;
@@ -12,11 +10,11 @@ public class PuddleManager : MonoBehaviour
     float randomX;
     float yAboveMedium=3;
     float yAbove;
-
     #endregion
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     #region timer
-    float spawnTime=5f;
+    float spawnTime=6f;
     float timer=0;
     #endregion
 
@@ -31,10 +29,11 @@ public class PuddleManager : MonoBehaviour
     void Update()
     {
         timer+=Time.deltaTime;
-        if(timer>=spawnTime){
+        if(timer>=spawnTime)
+        {
         randomX=Random.Range(leftBottom.x,topRight.x);//随机生成一个x
         spawnPosition=new Vector2(randomX,yAbove);//随机生成坐标位置
-        Instantiate(puddle,spawnPosition,Quaternion.identity);//随机生成。
+        Instantiate(coin,spawnPosition,Quaternion.identity);//随机生成。
         timer=0;
         }
     }

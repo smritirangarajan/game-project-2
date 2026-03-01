@@ -4,7 +4,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     [SerializeField] private float despawnDistance = 10f;
-
+    [SerializeField] private float fallSpeed = 1f;
     private Transform player;
 
     private void Start()
@@ -24,6 +24,7 @@ public class Coin : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);//按时间固定下降。
     }
 
     public void Collect()

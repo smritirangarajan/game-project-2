@@ -4,7 +4,7 @@ public class Snake : MonoBehaviour
 {
     private Transform player;
     [SerializeField] private float despawnDistance = 12f;
-    [SerializeField] private float fallSpeed = 3f;
+    [SerializeField] private float fallSpeed = 1.5f;
 
     private void Start()
     {

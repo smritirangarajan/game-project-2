@@ -49,7 +49,7 @@ public class Tongue : MonoBehaviour
         Coin coin = collision.GetComponent<Coin>();
         if (coin != null)
         {
-            coin.Collect();
+            coin.Collect();//得到了一个金币哦！
             retracting = true;
         }
     }
